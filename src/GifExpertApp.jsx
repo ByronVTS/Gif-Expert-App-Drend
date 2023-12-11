@@ -1,12 +1,12 @@
 import { useState } from "react"
 
-
-
 export const GitExpertApp = () => {
   
   const [categories, setcategories] = useState(['One Punch', 'Death Note'])
-  console.log(categories);
 
+  const onAddCategory = () => {
+    setcategories([...categories , "Family spy" ])
+  }
   return (
     <>
         {/* titulo */}
@@ -14,6 +14,7 @@ export const GitExpertApp = () => {
 
         {/* Input */}
         {/* Listado de gif */}
+        <button onClick={onAddCategory}>Agregar</button>
         <ol>
           {
             categories.map( category => {
