@@ -3,10 +3,10 @@ import { AddCategory } from "./components/AddCategory"
 
 export const GitExpertApp = () => {
   
-  const [categories, setcategories] = useState(['One Punch', 'Death Note'])
+  const [categories, setCategories] = useState(['One Punch', 'Death Note'])
 
   const onAddCategory = () => {
-    setcategories([...categories , "Family spy" ])
+    setCategories([...categories , "Family spy" ])
   }
   return (
     <>
@@ -14,16 +14,13 @@ export const GitExpertApp = () => {
         <h1>GifExpertApp</h1>
 
         {/* Input */}
-        <AddCategory/>
+        <AddCategory setCategories={setCategories}/>
 
         {/* Listado de gif */}
-        <button onClick={onAddCategory}>Agregar</button>
         <ol>
-          {
-            categories.map( category => {
-              return <li key={category}>{category}</li>
-          })
-          }
+        {categories.map((category, index) => (
+    <li key={index}>{category}</li>
+  ))}
         </ol>
 
         {/* GIF item */}
