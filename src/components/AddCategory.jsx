@@ -1,7 +1,7 @@
 import { useState } from 'react'
 // import {GitExpertApp} from '../GifExpertApp'
 
-export const AddCategory = ({setCategories}) => {
+export const AddCategory = ({setCategories, onNewCategory}) => {
 
     const [inputValue, setinputValue] = useState('Dr Stone')
 
@@ -9,14 +9,14 @@ export const AddCategory = ({setCategories}) => {
         setinputValue(event.target.value)
         // console.log(event.target.value);
         // setcategories([...categories , event.target.value ])
-
     }
 
     const onSubmit = (event) => {
         event.preventDefault()
         if(inputValue.trim().length <=1 ) return;
         // console.log(inputValue);
-        setCategories( categories => [inputValue, ...categories ])
+        // setCategories( categories => [inputValue, ...categories ])
+        onNewCategory(inputValue.trim())
         setinputValue('')
     }
 

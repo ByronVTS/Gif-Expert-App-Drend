@@ -5,8 +5,10 @@ export const GitExpertApp = () => {
   
   const [categories, setCategories] = useState(['One Punch', 'Death Note'])
 
-  const onAddCategory = () => {
-    setCategories([...categories , "Family spy" ])
+  const onAddCategory = (newCategory) => {
+    console.log(newCategory);    
+    // categories.push(newCategory)
+    setCategories([newCategory , ...categories])
   }
   return (
     <>
@@ -14,7 +16,10 @@ export const GitExpertApp = () => {
         <h1>GifExpertApp</h1>
 
         {/* Input */}
-        <AddCategory setCategories={setCategories}/>
+        <AddCategory
+          // setCategories={setCategories}
+          onNewCategory={onAddCategory}
+         />
 
         {/* Listado de gif */}
         <ol>
