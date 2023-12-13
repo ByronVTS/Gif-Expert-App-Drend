@@ -2,9 +2,11 @@ import React from 'react'
 
 export const GifItem = ({title,url, id}) => {
 
-
-    // console.log(image);
-
+// desde el componente de GifGrid estamos enviado los props en forma de propagacion, por ello tenemos acceso a todos los "datos"
+//  <GifItem
+//           key={image.id}
+//            {...image}
+//      />
   return (
         <div className='card'>
 
@@ -12,8 +14,5 @@ export const GifItem = ({title,url, id}) => {
             <p>{title}</p>
             
         </div>
-
-
-
     )
 }
